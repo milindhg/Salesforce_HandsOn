@@ -61,4 +61,28 @@ Some standard view Components
 		There are many more attributes to change the visibility of this component
 	outputField: To print or display some fields of the objects. 
 		Main attribute is value. The label automatically appears.
+	Repeat:
+		Used as a foreach loop in visualforce.
+		Main attribute is value for specifying what to iterate on and var for specifying the iterator.
+
+Standard Controllers
+	Provide basic functionality
+		Display data
+		Handling user actions
+		Handling page navigation
+		Save, Quick Save
+		Edit
+		Delete
+		Cancel
+		List
+Standard Set Controllers
+	Extension of standard list controller
+	includes pagination
+	optimized for large data sets
+Custom Controllers
+	Use it when you want some functionality not provided by the standard controller.
+		Provide new actions
+		Override existing actions
+		Customize navigation
+		Call external web services
 	
