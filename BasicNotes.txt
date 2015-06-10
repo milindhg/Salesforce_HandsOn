@@ -1,0 +1,64 @@
+Salesforce biggest points:
+
+No Software means declarative programming mostly.
+Multi tenancy architecture of sales force.
+
+
+
+Page creation Options
+1. ~.com/apex/<pageName>
+2. Setup > Develop > Pages
+
+Changing the session timeout
+Setup > Security Controls > Session Settings > Timeout value
+
+
+Search All
+Left side search option to anytime search anything in salesforce quickly
+
+
+Development options
+	Development Mode
+	Developer Console
+	Mavensmate plugin for sublime text
+	Brain Engine cloud studio > Visual studio look and feel :D > Brainengine.net
+	All the tools for development: dveloper.salesforce.com/page/tools
+	
+Standard objects and Custom objects
+
+Model View Controller
+
+Model: sObjects and APEX classes
+View: Pages and components
+Controller: Standard and Custom APEX controllers
+
+
+Unique ID for every object. To directly access this ID we can write ~.com/<ID>
+	
+	
+Expression Syntax
+	Anything inside {}
+	To refer any variable put ! before the variable name.
+	For global variables prefix it with $ just after the !.
+	
+Each component should have a starting and ending tag
+
+To access the documentation and usage of the components in the Visual force page, you can click the component reference to open the list of components from the development mode editor inside browser.
+
+
+Controllers
+	StandardController - attribute name: standardController
+	Custom controller - attribute name: controller
+
+Some standard view Components
+	page: This is the main page component inside which all the code of the page can be written. 
+		This component holds the controller binding name and some more view attributes to render the whole page.
+	pageBlock: To give the title to the page
+		main attribute title.
+	pageBlockSection: To give a collapsible section inside the page.
+		Main attribute title.
+		This component has 2 columns by default. We can use columns attribute to specify number of columns to keep on the section.
+		There are many more attributes to change the visibility of this component
+	outputField: To print or display some fields of the objects. 
+		Main attribute is value. The label automatically appears.
+	
