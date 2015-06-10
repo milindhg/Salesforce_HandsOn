@@ -1,0 +1,20 @@
+<apex:page standardController="contact">
+   <apex:form >
+       <apex:pageBlock title="{!if($CurrentPage.parameters.id == null,'Add Contact','Edit Contact')}">
+           <apex:pageBlockButtons location="top">
+               <apex:commandButton value="Save" action="{!save}"/>
+               <apex:commandButton value="Cancel" action="{!cancel}"/>
+           </apex:pageblockButtons>
+           <apex:pageBlockSection title="Details">
+               <apex:repeat value="{!$ObjectType.Contact.FieldSets.Details}" var="dtl">
+                   <apex:inputField value="{!Contact[dtl]}"/>
+               </apex:repeat>
+           </apex:pageBlockSection>
+           <apex:pageBlockSection title="Contact Info">
+               <apex:repeat value="{!$ObjectType.Contact.FieldSets.Contact_Info}" var="ctInfo">
+                   <apex:inputField value="{!Contact[ctInfo]}"/>
+               </apex:repeat>
+           </apex:pageBlockSection>
+       </apex:pageBlock>
+   </apex:form> 
+</apex:page>
