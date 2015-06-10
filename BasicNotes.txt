@@ -86,3 +86,22 @@ Custom Controllers
 		Customize navigation
 		Call external web services
 	
+Controller Comparison
+	Controller Type								Considerations
+	Standard Controller							Used to access single sObject/single record with no additional code
+	Standard Set Controller						Used to access single sObject/multiple records with no additional code
+	Custom Controller							Requires writing apex code, but not tied to a specific sObject/multiple
+	Extension									Keeps functionality of extended controller while adding to it, but you can use more than one per page
+	
+>>Apex Class with Public sharing option: This option utilizes the built in sharing model and restricts the amount of data returned and uses the built in query optimizer.
+
+>>Collection Types in visualforce
+Lists: 	Ordered Collection
+		List<String> my List = new List<String>();
+Sets: 	Unordered collection w/no duplicates
+		Set<Integer> mySet = new Set<Integer>();
+Maps: 	Collection of Key-Value pairs
+		Map<String, Integer> myMap = new Map<String, Integer>();
+		
+HomePage customization:
+Customize > Home > Homepage customization layouts
