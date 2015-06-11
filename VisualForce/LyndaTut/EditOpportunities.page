@@ -15,11 +15,21 @@
                 	<apex:inputField value="{!opp.CloseDate}"/>
                 </apex:column>
             </apex:pageBlockTable>
-            <apex:panelGrid columns="4" cellpadding="5" cellspacing="5" >
+            <apex:panelGrid columns="5" cellpadding="5" cellspacing="5" >
                 <apex:commandButton value="|<<" action="{!first}"/>
             	<apex:commandButton rendered="{!HasPrevious}" value="<" action="{!previous}"/>
                 <apex:commandButton rendered="{!HasNext}" value=">" action="{!next}"/>
                 <apex:commandButton value=">>|" action="{!last}"/>
+                <apex:outputText value="Records/Page"></apex:outputText>
+                <apex:panelGroup >
+                    <apex:selectList value="{!PageSize}" size="1">
+                        <apex:selectOption itemValue="10" itemLabel="10"></apex:selectOption>
+                        <apex:selectOption itemValue="20" itemLabel="20"></apex:selectOption>
+                        <apex:selectOption itemValue="30" itemLabel="30"></apex:selectOption>
+                    </apex:selectList>
+                    <apex:commandButton action="{!null}" value="Update Page Size"/>
+                </apex:panelGroup>
+                
             </apex:panelGrid>
         </apex:pageBlock>
     </apex:form>
