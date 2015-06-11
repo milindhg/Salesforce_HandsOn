@@ -105,3 +105,23 @@ Maps: 	Collection of Key-Value pairs
 		
 HomePage customization:
 Customize > Home > Homepage customization layouts
+
+
+>>Validation Rules
+	Can be used to enforce conditions:
+		conditionally required fields
+		required data formats
+		data consistency and prevent data loss
+		Error handling
+
+>>Messaging Components
+	<apex:pageMessages> 	Uses standard salesforce styling
+	<apex:pageMessage>		specific to one component
+	<apex:messages>			can apply a custom style
+	<apex:message>			custom style for one component
+	
+>>Standard List Controllers
+	Attributes: 
+		recordvarset to specify the name of the variable used for refeerring to the records.
+		tabstyle to specify the tab that appears actively selected when this page is opened.
+		
