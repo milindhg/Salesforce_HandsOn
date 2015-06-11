@@ -124,4 +124,5 @@ Customize > Home > Homepage customization layouts
 	Attributes: 
 		recordvarset to specify the name of the variable used for refeerring to the records.
 		tabstyle to specify the tab that appears actively selected when this page is opened.
-		
+	panelGrid tag to have the paging. Use this tag for next and prev buttons and use previous and next actions and much more.
+	
