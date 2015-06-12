@@ -53,6 +53,8 @@ Controllers
 Some standard view Components
 	page: This is the main page component inside which all the code of the page can be written. 
 		This component holds the controller binding name and some more view attributes to render the whole page.
+		sidebar: attribute to show or hide the salesforce sidebar
+		showheader: attribute to show or hide the salesforce header
 	pageBlock: To give the title to the page
 		main attribute title.
 	pageBlockSection: To give a collapsible section inside the page.
@@ -64,7 +66,10 @@ Some standard view Components
 	Repeat:
 		Used as a foreach loop in visualforce.
 		Main attribute is value for specifying what to iterate on and var for specifying the iterator.
-
+	
+	
+		
+		
 Standard Controllers
 	Provide basic functionality
 		Display data
@@ -125,4 +130,31 @@ Customize > Home > Homepage customization layouts
 		recordvarset to specify the name of the variable used for refeerring to the records.
 		tabstyle to specify the tab that appears actively selected when this page is opened.
 	panelGrid tag to have the paging. Use this tag for next and prev buttons and use previous and next actions and much more.
+	
+>>Unit Test
+	Apex class 
+		Does not accept arguments
+		Does not commit data to the database
+		Use testMethod keyword or @isClass annotation
+		It is just code written to test other code
+	Requirement to deploy
+		75% code coverage for testing
+		Formula for test code coverage = Test code lines / total code lines
+	Automation
+	Preventing bugs from  resurfacing
+	2 Ways
+		testMethod keyword along with static
+		@isTest keyword along with the static and @isTest annotation for the class 
+
+		Test.StartTest()
+		Test.StopTest()
+		System.Assert()
+		System.AssertEquals()
+		System.AssertNotEquals()
+		
+		
+More resources
+	developer.salesforce.com/
+	visualforce in practice book
+	salesforce 1 developer workshop
 	

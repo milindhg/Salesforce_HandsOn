@@ -1,0 +1,40 @@
+Variables
+
+>>Global Variables
+{!<global variable>.<field name>}
+
+>>Formulas
+	TODAY()
+	YEAR(TODAY())
+	DAY(TODAY() + 1)
+	Conditional formulas: 	{! IF(CONTAINS('salesforce.com','force.com'),'Yep','Nah')}
+							{! IF(DAY(TODAY()) > 14, 'After the 14th', 'On or before 14th')}
+	
+Expression language syntax: {! expression}
+Global Variable accessed as: $VariableName
+
+
+>>Re-rendering page details using param tag inside the commandButton tag.
+	Put the placeholder inside the outputPanel tag.
+	Then use the command button to trigger the action and inside the commandButton tag include the param tag to refer the placeholder and replace it with the value given in the value attribute of the param tag.
+
+
+	Something like below:
+	<apex:pageBlock title="Updating Visualforce pages with AJAX">
+        <apex:outputPanel id="contactDetails">
+            <apex:detail subject="{! $CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+        </apex:outputPanel>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Add Dynamic Re-rendering">
+        <apex:form >
+            <apex:dataList value="{! account.contacts}" var="contact">
+                <apex:commandButton reRender="contactDetails">
+                    {! contact.name}
+                    <apex:param name="cid" value="{! contact.id}"/>
+                </apex:commandButton>
+            </apex:dataList>
+        </apex:form>
+    </apex:pageBlock>
+
+
