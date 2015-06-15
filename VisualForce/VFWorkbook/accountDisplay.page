@@ -1,0 +1,37 @@
+<apex:page standardController="Account">
+    <p>Hello {! $User.FirstName}! </p>
+    <p> viewing account: {! account.name}</p>
+    <p> which is recognized as {! account.TickerSymbol} on NASDAQ </p>
+    <p> The owner of this account is: {! account.owner.FirstName} </p>
+<!--    <apex:detail />-->
+    <apex:pageBlock title="{! account.Name}">
+        <apex:pageBlockSection columns="1" title="Details">
+            <apex:outputField value="{! account.Name}"/>
+            <apex:outputField value="{! account.owner.FirstName}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1" title="Contacts">
+        <apex:sectionHeader title="Contacts section heading"/>
+            <apex:pageBlockTable value="{! account.contacts}" var="item">
+                    <apex:column value="{! item.Name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:relatedList list="contacts"/>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Updating Visualforce pages with AJAX">
+        <apex:outputPanel id="contactDetails">
+            <apex:detail subject="{! $CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+        </apex:outputPanel>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Add Dynamic Re-rendering">
+        <apex:form >
+            <apex:dataList value="{! account.contacts}" var="contact">
+                <apex:commandButton reRender="contactDetails" value="{! contact.name}">
+                    <apex:param name="cid" value="{! contact.id}"/>
+                </apex:commandButton>
+            </apex:dataList>
+        </apex:form>
+    <apex:outputLink value="{! $Page.TabbedAccount}?id={! account.Id}">Go to Tabbed Account Page</apex:outputLink>
+    </apex:pageBlock>
+</apex:page>

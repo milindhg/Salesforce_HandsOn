@@ -1,0 +1,20 @@
+<apex:page controller="StoreFrontController" tabStyle="Merchandise__c">
+    <apex:pageBlock title="Our Products">
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{! products}" var="pitem">
+                <apex:column headerValue="Product">
+                    <apex:outputText value="{! pitem.name}"/>
+                </apex:column>
+                <apex:column headerValue="Condition">
+                    <apex:outputText value="{! pitem.condition}"/>
+                </apex:column>
+                <apex:column headerValue="Price">
+                    <apex:outputText value="{0,number,currency}">
+                        <apex:param value="{! pitem.price}"/>
+                    </apex:outputText>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+</apex:page>
